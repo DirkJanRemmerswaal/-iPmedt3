@@ -18,6 +18,20 @@ window.onload = function(){
 	var cameraVoor = document.getElementById("cameraVoor")
 	var cameraBoven = document.getElementById("cameraBoven")
 
+	var knop1_1 = document.getElementById("knop1_1")
+	var knop1_2 = document.getElementById("knop1_2")
+	var knop1_3 = document.getElementById("knop1_3")
+	var knop1_4 = document.getElementById("knop1_4")
+
+	var knop2_1 = document.getElementById("knop2_1")
+	var knop2_2 = document.getElementById("knop2_2")
+	var knop2_3 = document.getElementById("knop2_3")
+
+	var knop3_1 = document.getElementById("knop3_1")
+	var knop3_2 = document.getElementById("knop3_2")
+	var knop3_3 = document.getElementById("knop3_3")
+	var knop3_4 = document.getElementById("knop3_4")
+
 	start.onclick = function(){
 		start.remove();
 		document.getElementById("scene").style.visibility = 'visible';
@@ -34,7 +48,52 @@ window.onload = function(){
 		}
 	}
 
-	speaker.onclick = function(){
+	knop1_1.onclick = function(){
+		var view = document.getElementById("animatie1_1")
+		view.emit("startAnimation");
+		setTimeout(function() {
+			view.emit("startAnimation");
+		}, 600);
+	}
+
+	knop1_2.onclick = function(){
+		var view = document.getElementById("animatie1_2")
+		view.emit("startAnimation");
+		setTimeout(function() {
+			view.emit("startAnimation");
+		}, 600);
+	}
+
+	knop1_3.onclick = function(){
+		var view = document.getElementById("animatie1_3")
+		view.emit("startAnimation");
+		setTimeout(function() {
+			view.emit("startAnimation");
+		}, 600);
+	}
+
+	knop1_4.onclick = function(){
+		var view = document.getElementById("animatie1_4")
+		view.emit("startAnimation");
+		setTimeout(function() {
+			view.emit("startAnimation");
+		}, 600);
+	}
+
+	knop2_1.onclick = function(){
+		var view = document.getElementById("animatie2_1")
+		view.emit("startAnimation");
+		setTimeout(function() {
+			view.emit("startAnimation");
+		}, 600);
+	}
+
+	knop2_2.onclick = function(){
+		var view = document.getElementById("animatie2_2")
+		view.emit("startAnimation");
+		setTimeout(function() {
+			view.emit("startAnimation");
+		}, 600);
 		if(aanuit2 != 1){
 			entity2.components.sound.stopSound();
 			entity2.components.sound.playSound();
@@ -46,6 +105,51 @@ window.onload = function(){
 			aanuit = 0;
 			aanuit2 = 0;
 		}
+	}
+
+	knop2_3.onclick = function(){
+		var view = document.getElementById("animatie2_3")
+		view.emit("startAnimation");
+		setTimeout(function() {
+			view.emit("startAnimation");
+		}, 600);
+	}
+
+	knop3_1.onclick = function(){
+		var view = document.getElementById("animatie3_1")
+		view.emit("startAnimation");
+		setTimeout(function() {
+			view.emit("startAnimation");
+		}, 600);
+	}
+
+	knop3_2.onclick = function(){
+		var view = document.getElementById("animatie3_2")
+		view.emit("startAnimation");
+		setTimeout(function() {
+			view.emit("startAnimation");
+		}, 600);
+	}
+
+	knop3_3.onclick = function(){
+		var view = document.getElementById("animatie3_3")
+		view.emit("startAnimation");
+		setTimeout(function() {
+			view.emit("startAnimation");
+		}, 600);
+	}
+
+	knop3_4.onclick = function(){
+		var view = document.getElementById("animatie3_4")
+		view.emit("startAnimation");
+		setTimeout(function() {
+			view.emit("startAnimation");
+		}, 600);
+	}
+	
+	start.onclick = function(){
+		start.remove();
+		document.getElementById("scene").style.visibility = 'visible';
 	}
 
 	stekker.onclick = function(){
@@ -80,7 +184,7 @@ window.onload = function(){
 	}
 
 	cameraBoven.onclick = function(){
-		camera.setAttribute("position", "0 2.1 -2.2")
+		camera.setAttribute("position", "0 2.6 -2.2")
 		camera.setAttribute("rotation", "290 0 0")
 	}
 }

@@ -20,19 +20,157 @@
             material="opacity: 0">
           </a-entity>
         </script>
+        <script id="link2" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: box; depth: 0.03; height: 0.03; width: 0.03"
+            material="opacity: 0">
+          </a-entity>
+        </script>
         <audio id="music" src="music.m4a" crossorigin="anonymous"></audio>
-		<audio id="aan" src="aan.wav" crossorigin="anonymous"><audio>
-		<audio id="uit" src="uit.wav" crossorigin="anonymous"><audio>
+		  <audio id="aan" src="aan.wav" crossorigin="anonymous"><audio>
+		  <audio id="uit" src="uit.wav" crossorigin="anonymous"><audio>
         <a-asset-item id="speaker-obj" src="speaker.dae"></a-asset-item>
-        <a-asset-item id="telefoon-obj" src="telefoon.dae"></a-asset-item>
+        <a-asset-item id="telefoon-obj" src="telefoon2.dae"></a-asset-item>
+        <a-asset-item id="knop-obj" src="knop.dae"></a-asset-item>
       </a-assets>
 
-      <a-entity id="knop1" template="src: #link" material="color: crimson" position="-1 .8 -3" rotation="0 270 0"></a-entity>
-	  <a-entity id="knop2" template="src: #link" material="color: crimson" position="0.6 0.9 -2.5" rotation="0 270 0"></a-entity>
+      <!-- Knoppen over de blendermodellen -->
+      <a-entity id="knop1" template="src: #link" position="-1 .8 -3" rotation="0 270 0"></a-entity>
+
+      <a-entity id="knop1_1" template="src: #link2" position="0.775 1.392 -2.450" rotation="0 270 0"></a-entity>
+      <a-entity id="knop1_2" template="src: #link2" position="0.723 1.392 -2.494" rotation="0 270 0"></a-entity>
+      <a-entity id="knop1_3" template="src: #link2" position="0.670 1.392 -2.538" rotation="0 270 0"></a-entity>
+      <a-entity id="knop1_4" template="src: #link2" position="0.617 1.392 -2.582" rotation="0 270 0"></a-entity>
+
+      <a-entity id="knop2_1" template="src: #link2" position="0.551 1.392 -2.638" rotation="0 270 0"></a-entity>
+      <a-entity id="knop2_2" template="src: #link2" position="0.497 1.392 -2.682" rotation="0 270 0"></a-entity>
+      <a-entity id="knop2_3" template="src: #link2" position="0.445 1.392 -2.727" rotation="0 270 0"></a-entity>
+
+      <a-entity id="knop3_1" template="src: #link2" position="0.378 1.392 -2.783" rotation="0 270 0"></a-entity>
+      <a-entity id="knop3_2" template="src: #link2" position="0.325 1.392 -2.827" rotation="0 270 0"></a-entity>
+      <a-entity id="knop3_3" template="src: #link2" position="0.272 1.392 -2.871" rotation="0 270 0"></a-entity>
+      <a-entity id="knop3_4" template="src: #link2" position="0.219 1.392 -2.915" rotation="0 270 0"></a-entity>
 
       <!-- Blender modellen -->
-      <a-entity collada-model="#speaker-obj" position="0.6 0.9 -2.5" scale="0.1 0.1 0.1" rotation="0 50 0"></a-entity>
+      <a-entity collada-model="#speaker-obj" position="0.6 0.9 -2.8" scale="0.12 0.12 .12" rotation="0 50 0"></a-entity>
       <a-entity id ="telefoon" collada-model="#telefoon-obj" position="-1 .8 -3" scale="0.1 0.1 0.1" rotation="0 270 0"></a-entity>
+
+      <!-- Blender knoppen op de speaker (Rechts) -->
+      <a-entity id ="knopSpeaker1_1" collada-model="#knop-obj" 
+      position="0.775 1.392 -2.450" scale="0.15 0.15 0.15" rotation="0 270 0">
+        <a-animation id="animatie1_1" 
+               attribute="position"
+               dur="500"
+               direction="alternate"
+               to="0.775 1.388 -2.450"
+               begin="startAnimation">
+               </a-animation>
+      </a-entity>
+      <a-entity id ="knopSpeaker1_2" collada-model="#knop-obj" 
+      position="0.723 1.392 -2.494" scale="0.15 0.15 0.15" rotation="0 270 0">
+        <a-animation id="animatie1_2" 
+               attribute="position"
+               dur="500"
+               direction="alternate"
+               to="0.723 1.388 -2.494"
+               begin="startAnimation">
+               </a-animation>
+      </a-entity>
+      <a-entity id ="knopSpeaker1_3" collada-model="#knop-obj" 
+      position="0.670 1.392 -2.538" scale="0.15 0.15 0.15" rotation="0 270 0">
+        <a-animation id="animatie1_3" 
+               attribute="position"
+               dur="500"
+               direction="alternate"
+               to="0.670 1.388 -2.538"
+               begin="startAnimation">
+               </a-animation>
+      </a-entity>
+      <a-entity id ="knopSpeaker1_4" collada-model="#knop-obj" 
+      position="0.617 1.392 -2.582" scale="0.15 0.15 0.15" rotation="0 270 0">
+        <a-animation id="animatie1_4" 
+               attribute="position"
+               dur="500"
+               direction="alternate"
+               to="0.617 1.388 -2.582"
+               begin="startAnimation">
+               </a-animation>
+      </a-entity>
+
+      <!-- Blender knoppen op de speaker (de Middelste)-->
+      <a-entity id ="knopSpeaker2_1" collada-model="#knop-obj" 
+      position="0.551 1.392 -2.638" scale="0.15 0.15 0.15" rotation="0 270 0">
+        <a-animation id="animatie2_1" 
+               attribute="position"
+               dur="500"
+               direction="alternate"
+               to="0.551 1.388 -2.638"
+               begin="startAnimation">
+               </a-animation>
+      </a-entity>
+      <a-entity id ="knopSpeaker2_2" collada-model="#knop-obj" 
+      position="0.497 1.392 -2.682" scale="0.15 0.15 0.15" rotation="0 270 0">
+        <a-animation id="animatie2_2" 
+               attribute="position"
+               dur="500"
+               direction="alternate"
+               to="0.497 1.388 -2.682"
+               begin="startAnimation">
+               </a-animation>
+      </a-entity>
+      <a-entity id ="knopSpeaker2_3" collada-model="#knop-obj" 
+      position="0.445 1.392 -2.727" scale="0.15 0.15 0.15" rotation="0 270 0">
+        <a-animation id="animatie2_3" 
+               attribute="position"
+               dur="500"
+               direction="alternate"
+               to="0.445 1.388 -2.727"
+               begin="startAnimation">
+               </a-animation>
+      </a-entity>
+
+      <!-- Blender knoppen op de speaker (Links)-->
+      <a-entity id ="knopSpeaker3_1" collada-model="#knop-obj" 
+      position="0.378 1.392 -2.783" scale="0.15 0.15 0.15" rotation="0 270 0">
+        <a-animation id="animatie3_1" 
+               attribute="position"
+               dur="500"
+               direction="alternate"
+               to="0.378 1.388 -2.783"
+               begin="startAnimation">
+               </a-animation>
+      </a-entity>
+      <a-entity id ="knopSpeaker3_2" collada-model="#knop-obj" 
+      position="0.325 1.392 -2.827" scale="0.15 0.15 0.15" rotation="0 270 0">
+        <a-animation id="animatie3_2" 
+               attribute="position"
+               dur="500"
+               direction="alternate"
+               to="0.325 1.388 -2.827"
+               begin="startAnimation">
+               </a-animation>
+      </a-entity>
+      <a-entity id ="knopSpeaker3_3" collada-model="#knop-obj" 
+      position="0.272 1.392 -2.871" scale="0.15 0.15 0.15" rotation="0 270 0">
+        <a-animation id="animatie3_3" 
+               attribute="position"
+               dur="500"
+               direction="alternate"
+               to="0.272 1.388 -2.871"
+               begin="startAnimation">
+               </a-animation>
+      </a-entity>
+      <a-entity id ="knopSpeaker3_4" collada-model="#knop-obj" 
+      position="0.219 1.392 -2.915" scale="0.15 0.15 0.15" rotation="0 270 0">
+        <a-animation id="animatie3_4" 
+               attribute="position"
+               dur="500"
+               direction="alternate"
+               to="0.219 1.388 -2.915"
+               begin="startAnimation">
+               </a-animation>
+      </a-entity>
+      
 
       <!-- Stekker -->
       <a-cylinder id="stekker" template="src: #link" position="1.8 1.2 -2.2" color="black" height="1.3" radius=".01"></a-cylinder>
@@ -51,33 +189,34 @@
       <a-box id="cameraLinks" template="src: #link" position="-3 2.8 -3" depth="0.2" height="0.2" width="0.2" color="red"></a-box>
       <a-box id="cameraAchter" template="src: #link" position="0 2.8 -6" depth="0.2" height="0.2" width="0.2" color="red"></a-box>
       <a-box id="cameraVoor" template="src: #link" position="0 2.8 0" depth="0.2" height="0.2" width="0.2" color="red"></a-box>
-      <a-box id="cameraBoven" template="src: #link" position="0 3.5 -3" depth="0.2" height="0.2" width="0.2" color="red"></a-box>
+      <a-box id="cameraBoven" template="src: #link" position="0 3.8 -3" depth="0.2" height="0.2" width="0.2" color="red"></a-box>
 
       <!-- Grond en dak -->
       <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#806000"></a-plane>
-      <a-box position="0 4 -4" rotation="-90 0 0" width="10" height="10" color="#ffb566"></a-box>
+      <a-box position="0 5 -4" rotation="-90 0 0" width="10" height="10" color="#ffb566"></a-box>
 
       <!-- Muren -->
-      <a-box position="5 2 -4" depth="10" height="4" width="0.1" color="#ffb566"></a-box>
-      <a-box position="-5 2 -4" depth="10" height="4" width="0.1" color="#ffb566"></a-box>
-      <a-box position="0 2 -8" rotation="0 90 0" depth="10" height="4" width="0.1" color="#ffb566"></a-box>
-      <a-box position="0 2 1" rotation="0 90 0" depth="10" height="4" width="0.1" color="#ffb566"></a-box>
+      <a-box position="5 2 -4" depth="10" height="5" width="0.1" color="#ffb566"></a-box>
+      <a-box position="-5 2 -4" depth="10" height="5" width="0.1" color="#ffb566"></a-box>
+      <a-box position="0 2 -8" rotation="0 90 0" depth="10" height="5" width="0.1" color="#ffb566"></a-box>
+      <a-box position="0 2 1" rotation="0 90 0" depth="10" height="5" width="0.1" color="#ffb566"></a-box>
 
       <a-entity id="hoi" sound="src: #music; poolSize: 2"></a-entity>
-	  <a-entity id="on" sound="src: #aan; poolSize: 2"></a-entity>
-	  <a-entity id="off" sound="src: #uit; poolSize: 2"></a-entity>
+	    <a-entity id="on" sound="src: #aan; poolSize: 2"></a-entity>
+	    <a-entity id="off" sound="src: #uit; poolSize: 2"></a-entity>
 
       <a-sky color="#ECECEC"></a-sky>
-      <a-light type="ambient" color="#222"></a-light>
+      
 
       <a-camera id="camera" position="0 0 0">
         <a-cursor id="cursor"
+          position="0 0 -1"
           animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
           animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
           event-set__1="_event: mouseenter; color: springgreen"
           event-set__2="_event: mouseleave; color: black"
           fuse="true"
-          raycaster="objects: .link"></a-cursor>
+          raycaster="objects: .link, .link2"></a-cursor>
         </a-cursor>
       </a-camera>
     </a-scene>
