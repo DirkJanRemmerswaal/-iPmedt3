@@ -32,6 +32,11 @@ window.onload = function(){
 	var knop3_3 = document.getElementById("knop3_3")
 	var knop3_4 = document.getElementById("knop3_4")
 
+	var iframeElement   = document.querySelector('iframe');
+	var iframeElementID = iframeElement.id;
+	var widget1         = SC.Widget(iframeElement);
+	var widget2         = SC.Widget(iframeElementID);
+
 	start.onclick = function(){
 		start.remove();
 		document.getElementById("scene").style.visibility = 'visible';
@@ -39,11 +44,10 @@ window.onload = function(){
 
 	knop.onclick = function(){
 		if(aanuit != 1 && aanuit2 == 1){
-			entity.components.sound.stopSound();
-			entity.components.sound.playSound();
+			widget1.play();
 			aanuit = 1;
 		}else{
-			entity.components.sound.stopSound();
+			widget1.pause();
 			aanuit = 0;
 		}
 	}
@@ -100,7 +104,7 @@ window.onload = function(){
 			aanuit2 = 1;
 		}else{
 			entity3.components.sound.stopSound();
-			entity.components.sound.stopSound();
+			widget1.pause();
 			entity3.components.sound.playSound();
 			aanuit = 0;
 			aanuit2 = 0;
@@ -146,7 +150,7 @@ window.onload = function(){
 			view.emit("startAnimation");
 		}, 600);
 	}
-	
+
 	start.onclick = function(){
 		start.remove();
 		document.getElementById("scene").style.visibility = 'visible';

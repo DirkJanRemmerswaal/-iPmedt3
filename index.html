@@ -7,6 +7,7 @@
     <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+    <script src="soundcloud.js"></script>
     <script src="js.js"></script>
     <link rel="stylesheet" type="text/css" href="css.css">
   </head>
@@ -27,13 +28,14 @@
           </a-entity>
         </script>
         <audio id="music" src="music.m4a" crossorigin="anonymous"></audio>
-		  <audio id="aan" src="aan.wav" crossorigin="anonymous"><audio>
-		  <audio id="uit" src="uit.wav" crossorigin="anonymous"><audio>
+		    <audio id="aan" src="aan.wav" crossorigin="anonymous"><audio>
+		    <audio id="uit" src="uit.wav" crossorigin="anonymous"><audio>
         <a-asset-item id="speaker-obj" src="speaker.dae"></a-asset-item>
         <a-asset-item id="telefoon-obj" src="telefoon2.dae"></a-asset-item>
         <a-asset-item id="knop-obj" src="knop.dae"></a-asset-item>
       </a-assets>
 
+      <iframe id="soundcloudmusic" width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/397652369&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
       <!-- Knoppen over de blendermodellen -->
       <a-entity id="knop1" template="src: #link" position="-1 .8 -3" rotation="0 270 0"></a-entity>
 
@@ -56,9 +58,9 @@
       <a-entity id ="telefoon" collada-model="#telefoon-obj" position="-1 .8 -3" scale="0.1 0.1 0.1" rotation="0 270 0"></a-entity>
 
       <!-- Blender knoppen op de speaker (Rechts) -->
-      <a-entity id ="knopSpeaker1_1" collada-model="#knop-obj" 
+      <a-entity id ="knopSpeaker1_1" collada-model="#knop-obj"
       position="0.775 1.392 -2.450" scale="0.15 0.15 0.15" rotation="0 270 0">
-        <a-animation id="animatie1_1" 
+        <a-animation id="animatie1_1"
                attribute="position"
                dur="500"
                direction="alternate"
@@ -66,9 +68,9 @@
                begin="startAnimation">
                </a-animation>
       </a-entity>
-      <a-entity id ="knopSpeaker1_2" collada-model="#knop-obj" 
+      <a-entity id ="knopSpeaker1_2" collada-model="#knop-obj"
       position="0.723 1.392 -2.494" scale="0.15 0.15 0.15" rotation="0 270 0">
-        <a-animation id="animatie1_2" 
+        <a-animation id="animatie1_2"
                attribute="position"
                dur="500"
                direction="alternate"
@@ -76,9 +78,9 @@
                begin="startAnimation">
                </a-animation>
       </a-entity>
-      <a-entity id ="knopSpeaker1_3" collada-model="#knop-obj" 
+      <a-entity id ="knopSpeaker1_3" collada-model="#knop-obj"
       position="0.670 1.392 -2.538" scale="0.15 0.15 0.15" rotation="0 270 0">
-        <a-animation id="animatie1_3" 
+        <a-animation id="animatie1_3"
                attribute="position"
                dur="500"
                direction="alternate"
@@ -86,9 +88,9 @@
                begin="startAnimation">
                </a-animation>
       </a-entity>
-      <a-entity id ="knopSpeaker1_4" collada-model="#knop-obj" 
+      <a-entity id ="knopSpeaker1_4" collada-model="#knop-obj"
       position="0.617 1.392 -2.582" scale="0.15 0.15 0.15" rotation="0 270 0">
-        <a-animation id="animatie1_4" 
+        <a-animation id="animatie1_4"
                attribute="position"
                dur="500"
                direction="alternate"
@@ -98,9 +100,9 @@
       </a-entity>
 
       <!-- Blender knoppen op de speaker (de Middelste)-->
-      <a-entity id ="knopSpeaker2_1" collada-model="#knop-obj" 
+      <a-entity id ="knopSpeaker2_1" collada-model="#knop-obj"
       position="0.551 1.392 -2.638" scale="0.15 0.15 0.15" rotation="0 270 0">
-        <a-animation id="animatie2_1" 
+        <a-animation id="animatie2_1"
                attribute="position"
                dur="500"
                direction="alternate"
@@ -108,9 +110,9 @@
                begin="startAnimation">
                </a-animation>
       </a-entity>
-      <a-entity id ="knopSpeaker2_2" collada-model="#knop-obj" 
+      <a-entity id ="knopSpeaker2_2" collada-model="#knop-obj"
       position="0.497 1.392 -2.682" scale="0.15 0.15 0.15" rotation="0 270 0">
-        <a-animation id="animatie2_2" 
+        <a-animation id="animatie2_2"
                attribute="position"
                dur="500"
                direction="alternate"
@@ -118,9 +120,9 @@
                begin="startAnimation">
                </a-animation>
       </a-entity>
-      <a-entity id ="knopSpeaker2_3" collada-model="#knop-obj" 
+      <a-entity id ="knopSpeaker2_3" collada-model="#knop-obj"
       position="0.445 1.392 -2.727" scale="0.15 0.15 0.15" rotation="0 270 0">
-        <a-animation id="animatie2_3" 
+        <a-animation id="animatie2_3"
                attribute="position"
                dur="500"
                direction="alternate"
@@ -130,9 +132,9 @@
       </a-entity>
 
       <!-- Blender knoppen op de speaker (Links)-->
-      <a-entity id ="knopSpeaker3_1" collada-model="#knop-obj" 
+      <a-entity id ="knopSpeaker3_1" collada-model="#knop-obj"
       position="0.378 1.392 -2.783" scale="0.15 0.15 0.15" rotation="0 270 0">
-        <a-animation id="animatie3_1" 
+        <a-animation id="animatie3_1"
                attribute="position"
                dur="500"
                direction="alternate"
@@ -140,9 +142,9 @@
                begin="startAnimation">
                </a-animation>
       </a-entity>
-      <a-entity id ="knopSpeaker3_2" collada-model="#knop-obj" 
+      <a-entity id ="knopSpeaker3_2" collada-model="#knop-obj"
       position="0.325 1.392 -2.827" scale="0.15 0.15 0.15" rotation="0 270 0">
-        <a-animation id="animatie3_2" 
+        <a-animation id="animatie3_2"
                attribute="position"
                dur="500"
                direction="alternate"
@@ -150,9 +152,9 @@
                begin="startAnimation">
                </a-animation>
       </a-entity>
-      <a-entity id ="knopSpeaker3_3" collada-model="#knop-obj" 
+      <a-entity id ="knopSpeaker3_3" collada-model="#knop-obj"
       position="0.272 1.392 -2.871" scale="0.15 0.15 0.15" rotation="0 270 0">
-        <a-animation id="animatie3_3" 
+        <a-animation id="animatie3_3"
                attribute="position"
                dur="500"
                direction="alternate"
@@ -160,9 +162,9 @@
                begin="startAnimation">
                </a-animation>
       </a-entity>
-      <a-entity id ="knopSpeaker3_4" collada-model="#knop-obj" 
+      <a-entity id ="knopSpeaker3_4" collada-model="#knop-obj"
       position="0.219 1.392 -2.915" scale="0.15 0.15 0.15" rotation="0 270 0">
-        <a-animation id="animatie3_4" 
+        <a-animation id="animatie3_4"
                attribute="position"
                dur="500"
                direction="alternate"
@@ -170,7 +172,7 @@
                begin="startAnimation">
                </a-animation>
       </a-entity>
-      
+
 
       <!-- Stekker -->
       <a-cylinder id="stekker" template="src: #link" position="1.8 1.2 -2.2" color="black" height="1.3" radius=".01"></a-cylinder>
@@ -206,7 +208,7 @@
 	    <a-entity id="off" sound="src: #uit; poolSize: 2"></a-entity>
 
       <a-sky color="#ECECEC"></a-sky>
-      
+
 
       <a-camera id="camera" position="0 0 0">
         <a-cursor id="cursor"
