@@ -42,23 +42,23 @@ window.onload = function(){
 	var playpause				= document.getElementById("playpause");
 	var vorige					= document.getElementById("vorige");
 
-	volgende.onclick = function(){
-		widget1.next();
-	};
+	// volgende.onclick = function(){
+	// 	widget1.next();
+	// };
 
-	vorige.onclick = function(){
-		widget1.prev();
-	};
+	// vorige.onclick = function(){
+	// 	widget1.prev();
+	// };
 
-	playpause.onclick = function(){
-		if(aanuit != 1 && aanuit2 == 1){
-			widget1.play();
-			aanuit = 1;
-		}else{
-			widget1.pause();
-			aanuit = 0;
-		}
-	};
+	// playpause.onclick = function(){
+	// 	if(aanuit != 1 && aanuit2 == 1){
+	// 		widget1.play();
+	// 		aanuit = 1;
+	// 	}else{
+	// 		widget1.pause();
+	// 		aanuit = 0;
+	// 	}
+	// };
 
 	function volumeUp(){
 		widget1.getVolume(function(vol){
@@ -175,6 +175,8 @@ window.onload = function(){
 	knop3_2.onclick = function(){
 		var view = document.getElementById("animatie3_2")
 		view.emit("startAnimation");
+		widget1.next();
+		widget1.seekTo(0);
 		setTimeout(function() {
 			view.emit("startAnimation");
 		}, 600);
@@ -183,6 +185,7 @@ window.onload = function(){
 	knop3_3.onclick = function(){
 		var view = document.getElementById("animatie3_3")
 		view.emit("startAnimation");
+		widget1.toggle();
 		setTimeout(function() {
 			view.emit("startAnimation");
 		}, 600);
@@ -191,6 +194,8 @@ window.onload = function(){
 	knop3_4.onclick = function(){
 		var view = document.getElementById("animatie3_4")
 		view.emit("startAnimation");
+		widget1.prev();
+		widget1.seekTo(0);
 		setTimeout(function() {
 			view.emit("startAnimation");
 		}, 600);
