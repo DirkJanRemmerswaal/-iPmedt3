@@ -1,10 +1,10 @@
 #scene
 {
-  visibility: hidden;
+  display: none;
 }
 #soundcloudmusic
 {
-  visibility: hidden;
+  display: block;
 }
 #start
 {

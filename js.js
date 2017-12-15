@@ -33,10 +33,32 @@ window.onload = function(){
 	var knop3_4 = document.getElementById("knop3_4")
 
 	var iframeElement   = document.querySelector('iframe');
+	var soundcloudmusic	= document.getElementById("soundcloudmusic")
 	var iframeElementID = iframeElement.id;
 	var widget1         = SC.Widget(iframeElement);
 	var widget2         = SC.Widget(iframeElementID);
 	var vol;
+	var volgende				= document.getElementById("volgende");
+	var playpause				= document.getElementById("playpause");
+	var vorige					= document.getElementById("vorige");
+
+	volgende.onclick = function(){
+		widget1.next();
+	};
+
+	vorige.onclick = function(){
+		widget1.prev();
+	};
+
+	playpause.onclick = function(){
+		if(aanuit != 1 && aanuit2 == 1){
+			widget1.play();
+			aanuit = 1;
+		}else{
+			widget1.pause();
+			aanuit = 0;
+		}
+	};
 
 	function volumeUp(){
 		widget1.getVolume(function(vol){
@@ -64,19 +86,13 @@ window.onload = function(){
 
 	start.onclick = function(){
 		start.remove();
-		widget1.play();
-		document.getElementById("scene").style.visibility = 'visible';
 	}
 
-	knop.onclick = function(){
-		if(aanuit != 1 && aanuit2 == 1){
-			widget1.play();
-			aanuit = 1;
-		}else{
-			widget1.pause();
-			aanuit = 0;
-		}
-	}
+	widget1.bind(SC.Widget.Events.PLAY, function(){
+		document.getElementById("scene").style.display = 'block';
+		widget1.unbind(SC.Widget.Events.PLAY)
+		widget1.pause();
+	});
 
 	knop1_1.onclick = function(){
 		var view = document.getElementById("animatie1_1")
