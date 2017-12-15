@@ -36,9 +36,35 @@ window.onload = function(){
 	var iframeElementID = iframeElement.id;
 	var widget1         = SC.Widget(iframeElement);
 	var widget2         = SC.Widget(iframeElementID);
+	var vol;
+
+	function volumeUp(){
+		widget1.getVolume(function(vol){
+        console.log(vol);
+				if(vol < 100){
+					vol = vol + 10;
+					console.log();
+					widget1.setVolume(vol);
+					console.log(vol);
+				}
+			});
+	}
+
+	function volumeDown(){
+		widget1.getVolume(function(vol){
+        console.log(vol);
+				if(vol > 0){
+					vol = vol - 10;
+					console.log();
+					widget1.setVolume(vol);
+					console.log(vol);
+				}
+			});
+	}
 
 	start.onclick = function(){
 		start.remove();
+		widget1.play();
 		document.getElementById("scene").style.visibility = 'visible';
 	}
 
@@ -87,8 +113,10 @@ window.onload = function(){
 	knop2_1.onclick = function(){
 		var view = document.getElementById("animatie2_1")
 		view.emit("startAnimation");
+		volumeUp();
 		setTimeout(function() {
 			view.emit("startAnimation");
+
 		}, 600);
 	}
 
@@ -114,6 +142,7 @@ window.onload = function(){
 	knop2_3.onclick = function(){
 		var view = document.getElementById("animatie2_3")
 		view.emit("startAnimation");
+		volumeDown();
 		setTimeout(function() {
 			view.emit("startAnimation");
 		}, 600);
